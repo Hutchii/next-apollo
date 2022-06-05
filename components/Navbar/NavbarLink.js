@@ -15,7 +15,7 @@ export default function NavbarLink({
   return (
     <Item active={active} delay={delay} onClick={onClickHandler}>
       {!external ? (
-        <Link href={href}>
+        <Link href={href} passHref>
           <LinkStyled isPathActive={isPathActive}>{name}</LinkStyled>
         </Link>
       ) : (
@@ -41,6 +41,7 @@ const LinkStyled = styled.a`
     padding-bottom: 1.5rem;
     width: auto;
     display: flex;
+    font-weight: 500;
   }
 `;
 

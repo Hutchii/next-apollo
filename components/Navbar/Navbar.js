@@ -40,18 +40,16 @@ export default function Navbar({ onClickHandler, theme }) {
             />
           ))}
         </ListStyled>
-        <ModeStyled>
+        <ModeStyled aria-label="Toggle theme">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
             viewBox="0 0 24 24"
             fill="none"
-            // color="var(--white)"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            // stroke={theme ? "#FFFFFF" : "#111111"}
             style={{
               cursor: "pointer",
               transform: theme ? "rotate(90deg)" : "rotate(40deg)",
@@ -125,6 +123,7 @@ const ListStyled = styled.ul`
     background-color: var(--white);
     transition: opacity 0.25s ease, background-color 0.08s ease;
     opacity: ${({ active }) => (active ? "1" : "0")};
+    pointer-events: ${({ active }) => (active ? "unset" : "none")};
   }
 `;
 

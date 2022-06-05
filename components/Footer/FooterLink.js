@@ -5,7 +5,7 @@ export default function FooterLink({ href, name, external }) {
   return (
     <li>
       {!external ? (
-        <Link href={href}>
+        <Link href={href} passHref>
           <LinkStyled>{name}</LinkStyled>
         </Link>
       ) : (

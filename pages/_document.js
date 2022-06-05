@@ -4,14 +4,14 @@ import { ServerStyleSheet } from "styled-components";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
             rel="stylesheet"
           />
           <meta name="robots" content="follow, index" />
-          <meta content="#ffffff" name="theme-color" />
+          <meta content="#FFFFFF" name="theme-color" />
         </Head>
         <body>
           <Main />
