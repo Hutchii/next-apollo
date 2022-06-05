@@ -36,6 +36,14 @@ const Wrapper = styled.div`
   border-color: transparent;
   border-radius: 0.75rem;
   padding: 0.15rem;
+  &:nth-of-type(odd) {
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+      linear-gradient(90deg, #117c3c, #15bb58) border-box;
+  }
+  &:nth-of-type(even) {
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+      linear-gradient(90deg, #5a1988, #8415d4) border-box;
+  }
   @media (max-width: 768px) {
     width: 100%;
   }
