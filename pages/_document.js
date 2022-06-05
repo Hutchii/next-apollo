@@ -10,6 +10,8 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
             rel="stylesheet"
           />
+          <meta name="robots" content="follow, index" />
+          <meta content="#ffffff" name="theme-color" />
         </Head>
         <body>
           <Main />

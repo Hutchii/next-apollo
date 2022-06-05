@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { dateConverter } from "../../utils/dateConverter";
+import ListNavigation from "./ListNavigation";
 
 export default function List({ data, fetchMore }) {
   const { info, results } = data;
@@ -15,20 +16,7 @@ export default function List({ data, fetchMore }) {
           <Line />
         </div>
       ))}
-      <Navigation>
-        <Button
-          disabled={!info.prev}
-          onClick={() => fetchMore({ variables: { page: info.prev } })}
-        >
-          &#8592; Prev
-        </Button>
-        <Button
-          disabled={!info.next}
-          onClick={() => fetchMore({ variables: { page: info.next } })}
-        >
-          Next &#8594;
-        </Button>
-      </Navigation>
+      <ListNavigation fetchMore={fetchMore} prev={info.prev} next={info.next} />
     </Wrapper>
   );
 }
@@ -66,20 +54,4 @@ const Line = styled.div`
   height: 1px;
   background: var(--black);
   opacity: 0.1;
-`;
-const Button = styled.button`
-  border: 0;
-  background: transparent;
-  font-size: 1.7rem;
-  margin-top: 2rem;
-  cursor: pointer;
-  color: var(--black);
-  &:disabled {
-    opacity: 0;
-    pointer-events: none;
-  }
-`;
-const Navigation = styled.div`
-  display: flex;
-  justify-content: space-between;
 `;

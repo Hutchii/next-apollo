@@ -2,15 +2,32 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
-export default function NavbarLink({ href, name, active, delay }) {
+export default function NavbarLink({
+  href,
+  name,
+  active,
+  delay,
+  external,
+  onClickHandler,
+}) {
   const { pathname } = useRouter();
   const isPathActive = pathname === href;
   return (
-    <Item active={active} delay={delay}>
-      <Link href={href}>
-        <LinkStyled isPathActive={isPathActive}>{name}</LinkStyled>
-      </Link>
-      <Line />
+    <Item active={active} delay={delay} onClick={onClickHandler}>
+      {!external ? (
+        <Link href={href}>
+          <LinkStyled isPathActive={isPathActive}>{name}</LinkStyled>
+        </Link>
+      ) : (
+        <LinkStyled
+          href={href}
+          isPathActive={isPathActive}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {name}
+        </LinkStyled>
+      )}
     </Item>
   );
 }
@@ -21,17 +38,12 @@ const LinkStyled = styled.a`
   cursor: pointer;
   @media (max-width: 768px) {
     font-weight: 500;
+    padding-bottom: 1.5rem;
+    width: auto;
+    display: flex;
   }
 `;
-const Line = styled.div`
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 1px;
-    background: var(--black);
-    opacity: 0.1;
-    margin-top: 1.5rem;
-  }
-`;
+
 const Item = styled.li`
   @media (max-width: 768px) {
     opacity: ${({ active }) => (active ? "1" : "0")};
@@ -39,5 +51,6 @@ const Item = styled.li`
       active ? "translateX(0)" : "translateX(-16px)"};
     transition: opacity 0.3s ease, transform 0.35s ease;
     transition-delay: ${({ delay }) => `${delay}ms`};
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
   }
 `;

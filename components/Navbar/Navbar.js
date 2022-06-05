@@ -2,11 +2,20 @@ import styled, { keyframes, css } from "styled-components";
 import NavbarLink from "./NavbarLink";
 import ClosedIcon from "../../public/svg/menu-closed.svg";
 import OpenIcon from "../../public/svg/menu-open.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { navigationList } from "../../utils/navigationList";
 
 export default function Navbar({ onClickHandler, theme }) {
   const [openDropdown, setOpenDropdown] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    if (mq.matches) {
+      if (openDropdown) document.body.classList.add("overflow-hidden");
+      else document.body.classList.remove("overflow-hidden");
+    }
+  }, [openDropdown]);
+
   return (
     <header className="spacer">
       <NavStyled>
@@ -26,6 +35,8 @@ export default function Navbar({ onClickHandler, theme }) {
               href={item.href}
               delay={i * 30 + 150}
               active={openDropdown}
+              external={item.external}
+              onClickHandler={() => setOpenDropdown(false)}
             />
           ))}
         </ListStyled>

@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
   --black: ${({ theme }) => theme.black};
   --white: ${({ theme }) => theme.white};
   --green: #178142;
+  --grey: #656565;
   --ibm: 'IBM Plex Sans', sans-serif;
 }
 * {
@@ -48,6 +49,9 @@ img {
   padding: 0 3.2rem 0;
   max-width: 76.2rem;
   margin: 0 auto;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 `;
 

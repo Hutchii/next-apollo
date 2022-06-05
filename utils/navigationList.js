@@ -1,18 +1,11 @@
 export const navigationList = [
   {
-    name: "SSG",
+    name: "Home",
     href: "/",
   },
   {
-    name: "SSR",
-    href: "/ssr",
-  },
-  {
-    name: "Client",
-    href: "/client",
-  },
-  {
-    name: "About",
-    href: "/about",
+    name: "GitHub",
+    href: "https://github.com/Hutchii",
+    external: true,
   },
 ];
