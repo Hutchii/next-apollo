@@ -10,11 +10,11 @@ export default function Card({ data }) {
         <Title>{data.name}</Title>
         <Box>
           <CreatedIcon />
-          <p>{dateConverter(data.created)}</p>
+          <Text>{dateConverter(data.created)}</Text>
         </Box>
         <Box>
           <SpecieIcon />
-          <p>{data.species}</p>
+          <Text>{data.species}</Text>
         </Box>
       </CardBox>
     </Wrapper>
@@ -60,4 +60,7 @@ const Title = styled.h2`
   font-weight: 500;
   color: var(--black);
   margin-bottom: 1.2rem;
+`;
+const Text = styled.p`
+  color: var(--grey);
 `;
