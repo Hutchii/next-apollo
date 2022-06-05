@@ -33,8 +33,7 @@ export default function NavbarLink({
 }
 
 const LinkStyled = styled.a`
-  font-weight: ${({ isPathActive }) => (isPathActive ? "500" : "400")};
-  color: ${({ isPathActive }) => (isPathActive ? "var(--green)" : "inherit")};
+  font-weight: 400;
   cursor: pointer;
   @media (max-width: 768px) {
     font-weight: 500;
@@ -52,6 +51,6 @@ const Item = styled.li`
       active ? "translateX(0)" : "translateX(-16px)"};
     transition: opacity 0.3s ease, transform 0.35s ease;
     transition-delay: ${({ delay }) => `${delay}ms`};
-    border-bottom: 1px solid rgba(0,0,0, 0.1);
+    border-bottom: 1px solid var(--border);
   }
 `;
