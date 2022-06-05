@@ -22,7 +22,7 @@ export default function List({ data, fetchMore }) {
 }
 
 const Wrapper = styled.div`
-  margin-top: 5rem;
+  margin-top: 4rem;
   div + div {
     margin-top: 1.5rem;
   }

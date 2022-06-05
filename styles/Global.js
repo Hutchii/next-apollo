@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
   --black: ${({ theme }) => theme.black};
   --white: ${({ theme }) => theme.white};
   --green: #178142;
-  --grey: #656565;
+  --grey: ${({ theme }) => theme.grey};
   --ibm: 'IBM Plex Sans', sans-serif;
 }
 * {
@@ -58,8 +58,10 @@ img {
 export const lightTheme = {
   black: "#111111",
   white: "#f9fafb",
+  grey: "#111111"
 };
 export const darkTheme = {
   black: "#f9fafb",
   white: "#111111",
+  grey: "#909090"
 };

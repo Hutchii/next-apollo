@@ -28,7 +28,7 @@ const Button = styled.button`
   border: 0;
   background: transparent;
   font-size: 1.7rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   cursor: pointer;
   color: var(--black);
   &:disabled {

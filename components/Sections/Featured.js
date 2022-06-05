@@ -15,10 +15,7 @@ export default function Featured({ data }) {
 }
 
 const Wrapper = styled.div`
-  margin-top: 3rem;
-  @media(max-width: 768px) {
-    margin-top: 1rem;
-  }
+  margin-top: 4rem;
 `;
 const Heading = styled.h1`
   font-size: 3.6rem;
@@ -31,11 +28,11 @@ const Heading = styled.h1`
 const CardBox = styled.div`
   display: flex;
   gap: 2rem;
-  a:nth-of-type(odd) {
+  div:nth-of-type(odd) {
     background: linear-gradient(var(--white), var(--white)) padding-box,
     linear-gradient(90deg, #117c3c, #15bb58) border-box;
   }
-  a:nth-of-type(even) {
+  div:nth-of-type(even) {
     background: linear-gradient(var(--white), var(--white)) padding-box,
     linear-gradient(90deg, #5a1988, #8415d4) border-box;
   }

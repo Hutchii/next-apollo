@@ -21,7 +21,7 @@ const LinkStyled = styled.a`
   cursor: pointer;
   font-size: 1.7rem;
   font-weight: 400;
-  color: var(--grey);
+  color: #707070;
   transition: color 0.3s ease;
   &:hover {
     color: var(--black);

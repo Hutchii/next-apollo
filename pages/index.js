@@ -4,6 +4,7 @@ import Featured from "../components/Sections/Featured";
 import List from "../components/Sections/List";
 import { useQuery } from "@apollo/client";
 import Head from "next/head";
+import Description from "../components/Sections/Description";
 
 export default function Home({ data }) {
   const {
@@ -28,6 +29,7 @@ export default function Home({ data }) {
         <link rel="canonical" href="https://nextjs-blog-apollo.vercel.app" />
       </Head>
       <main className="spacer">
+        <Description />
         {data && data.length > 0 && <Featured data={data} />}
         {!loading && clientData && !error && (
           <List data={clientData.characters} fetchMore={fetchMore} />

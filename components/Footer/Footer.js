@@ -27,10 +27,10 @@ const Line = styled.div`
   height: 1px;
   background: var(--black);
   opacity: 0.1;
-  margin-top: 6rem;
+  margin-top: 8rem;
 `;
 const List = styled.ul`
   display: flex;
   gap: 6rem;
-  margin: 4rem 0;
+  margin: 3rem 0;
 `;
