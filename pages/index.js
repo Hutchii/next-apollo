@@ -39,7 +39,7 @@ export default function Home({ heroData }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const client = initializeApollo();
   try {
     const { data } = await client.query({
