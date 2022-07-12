@@ -6,7 +6,7 @@ export default function Featured({ data }) {
     <Wrapper>
       <Heading>Featured Characters</Heading>
       <CardBox>
-        {data?.map((character) => (
+        {data.map((character) => (
           <Card key={character.id} data={character} />
         ))}
       </CardBox>

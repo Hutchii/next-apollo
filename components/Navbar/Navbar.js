@@ -101,7 +101,7 @@ const NavStyled = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   position: relative;
   li + li {
     margin-left: 4rem;

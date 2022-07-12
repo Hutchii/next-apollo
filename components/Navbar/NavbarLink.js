@@ -33,14 +33,19 @@ export default function NavbarLink({
 }
 
 const LinkStyled = styled.a`
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
   @media (max-width: 768px) {
-    font-weight: 500;
     padding-bottom: 1.5rem;
     width: auto;
     display: flex;
-    font-weight: 500;
+  }
+  @media (min-width: 480.1px) {
+    &:hover {
+      color: var(--green);
+      border-bottom: 1px solid var(--green);
+      border-spacing: 52px;
+    }
   }
 `;
 

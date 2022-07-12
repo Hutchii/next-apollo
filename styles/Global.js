@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
 :root {
   --black: ${({ theme }) => theme.black};
   --white: ${({ theme }) => theme.white};
-  --green: #178142;
+  --green: #15b656;
   --grey: ${({ theme }) => theme.grey};
   --border: ${({ theme }) => theme.border};
   --ibm: 'IBM Plex Sans', sans-serif;
@@ -14,7 +14,9 @@ export const GlobalStyles = createGlobalStyle`
   margin: 0;
   padding: 0;
 }
-
+::selection {
+  background: var(--green);
+}
 body {
   font-family: var(--ibm);
   background-color: var(--white);

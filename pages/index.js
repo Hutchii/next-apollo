@@ -6,7 +6,7 @@ import { useQuery } from "@apollo/client";
 import Head from "next/head";
 import Description from "../components/Sections/Description";
 
-export default function Home({ data }) {
+export default function Home({ heroData }) {
   const {
     loading,
     error,
@@ -30,7 +30,7 @@ export default function Home({ data }) {
       </Head>
       <main className="spacer">
         <Description />
-        {data && data.length > 0 && <Featured data={data} />}
+        {heroData && heroData.length > 0 && <Featured data={heroData} />}
         {!loading && clientData && !error && (
           <List data={clientData.characters} fetchMore={fetchMore} />
         )}
@@ -41,7 +41,6 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
   const client = initializeApollo();
-
   try {
     const { data } = await client.query({
       query: CHARACTERS,
@@ -51,7 +50,7 @@ export async function getServerSideProps() {
     });
     return addApolloState(client, {
       props: {
-        data: data.characters.results.slice(0, 3),
+        heroData: data.characters.results.slice(0, 3),
       },
     });
   } catch (err) {

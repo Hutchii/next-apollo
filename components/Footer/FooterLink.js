@@ -22,8 +22,11 @@ const LinkStyled = styled.a`
   font-size: 1.7rem;
   font-weight: 400;
   color: #707070;
-  transition: color 0.3s ease;
-  &:hover {
-    color: var(--black);
+  @media (min-width: 480.1px) {
+    &:hover {
+      color: var(--green);
+      border-bottom: 1px solid var(--green);
+      border-spacing: 52px;
+    }
   }
 `;
