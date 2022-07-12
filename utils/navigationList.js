@@ -5,7 +5,7 @@ export const navigationList = [
   },
   {
     name: "GitHub",
-    href: "https://github.com/Hutchii",
+    href: "https://github.com/Hutchii/nextjs-blog-apollo",
     external: true,
   },
 ];

@@ -25,6 +25,7 @@ body {
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: 100%;
+  color-scheme: ${({ theme }) => theme.mode};
 }
 
 a {
@@ -61,10 +62,12 @@ export const lightTheme = {
   white: "#f9fafb",
   grey: "#111111",
   border: "rgba(0,0,0, 0.1)",
+  mode: "light",
 };
 export const darkTheme = {
   black: "#f9fafb",
   white: "#111111",
   grey: "#909090",
   border: "rgba(255,255,255, 0.1)",
+  mode: "dark",
 };
